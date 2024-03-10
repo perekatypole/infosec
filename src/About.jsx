@@ -6,44 +6,20 @@ const About = () => {
   const [isActive2, setIsActive2] = useState(false);
   const [heightP, setHeightP] = useState("");
   const nodeRef = useRef(null);
-  window.onload = function () {
-    let oldHProd = `${document.getElementById("prodBtn").offsetHeight}px`;
 
-    let newHProd = "";
-    // let oldHProd = "";
-    let newHComp = "";
-    let oldHComp = "";
-    if (document.getElementById("prod-inf") != null) {
-      // oldHProd += `${document.getElementById("prodBtn").offsetHeight}px`;
-      newHProd += `${
-        document.getElementById("prod-inf").offsetHeight +
-        document.getElementById("prodBtn").offsetHeight +
-        Number(
-          window
-            .getComputedStyle(document.getElementById("prod-inf"))
-            .marginTop.replace("px", "")
-        )
-      }px`;
-      return oldHProd, newHProd
-    }
-  };
-  console.log(oldHProd);
   return (
     <div className="container">
       <div className="about-wrapper">
         <div className="about-container">
           <div
             className="about-product"
-            style={{
-              height: isActive1 ? newHProd : oldHProd,
-            }}
             onClick={() => setIsActive1(!isActive1)}
           >
             <div id="prodBtn" className="prod-btn">
               <h3>О ПРОДУКТЕ</h3>
               <img className="arrow" src={arrdown} alt="arrow down" />
             </div>
-            <div id="prod-inf" className="product-inf">
+            {isActive1 && <div id="prod-inf" className="product-inf">
               <p>
                 <b>
                   Инновация в области гигиены полости рта, получившая два
@@ -62,7 +38,7 @@ const About = () => {
                 матовой поверхностью, исключающая скольжение. Выверенная по всем
                 стоматологическим стандартам сменная чистящая часть ...
               </p>
-            </div>
+            </div>}
           </div>
           <div
             className="about-company"
