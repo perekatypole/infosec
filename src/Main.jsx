@@ -1,12 +1,17 @@
 import React from "react";
 
-const Main = () => {
+const Main = ({ active, setActive }) => {
   return (
     <div className="container">
       <main>
-        <div class="ratio first-card">
-          <div class="ratio-inner ratio-2-1">
-            <div class="ratio-content first-content">
+        <div className="ratio first-card">
+          <div className="ratio-inner ratio-2-1">
+            <div
+              className="ratio-content first-content"
+              onClick={() => {
+                setActive(true);
+              }}
+            >
               <div className="first-card-logo">
                 <h1>
                   СТОМАТОЛОЛГИЧЕСКИЕ <br /> ИННОВАЦИИ
@@ -36,7 +41,12 @@ const Main = () => {
         </div>
         <div class="ratio  second-card">
           <div class="ratio-inner ratio-1-1">
-            <div class="ratio-content second-content">
+            <div
+              class="ratio-content second-content"
+              onClick={() => {
+                setActive(true);
+              }}
+            >
               <div className="second-about card-about">
                 <div className="inf">
                   <h3>Ручки</h3>
@@ -64,7 +74,12 @@ const Main = () => {
         </div>
         <div class="ratio third-card">
           <div class="ratio-inner ratio-1-1 ">
-            <div class="ratio-content third-content">
+            <div
+              class="ratio-content third-content"
+              onClick={() => {
+                setActive(true);
+              }}
+            >
               <div className="third-about card-about">
                 <div className="inf">
                   <h3>Щетинки</h3>
